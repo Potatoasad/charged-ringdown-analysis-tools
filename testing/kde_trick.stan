@@ -2,7 +2,7 @@ data {
   int nobs;
   int nsamp;
 
-  real chis[nobs, nsamp];
+  real chi_qs[nobs, nsamp, 2];
 }
 
 /* Things will be smoother if we KDE over the data; this computes a Scott-like
