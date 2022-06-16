@@ -3,7 +3,7 @@ functions {
     real numerator;
     real denomenator;
     numerator = exp(normal_lpdf(x | mu, sigma));
-    denomenator = sigma*(normal_cdf(b, mu, sigma) - normal_cdf(a, mu, sigma));
+    denomenator = normal_cdf(b, mu, sigma) - normal_cdf(a, mu, sigma);
     return numerator/denomenator;
   }
 
