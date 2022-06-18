@@ -8,7 +8,7 @@ functions {
   }
 
   real prior_conditioned_on_hyperprior(real r, real theta, real mu_r, real sigma_r, real mu_theta, real sigma_theta) {
-    return pdf_truncated_normal(r, mu_r, sigma_r, 0, 1)*pdf_truncated_normal(theta, mu_theta, sigma_theta, 0, pi()/2)
+    return pdf_truncated_normal(r, mu_r, sigma_r, 0, 1)*pdf_truncated_normal(theta, mu_theta, sigma_theta, 0, pi()/2);
   }
 }
 
@@ -44,6 +44,6 @@ model {
       theta = r_thetas[i,j,2];
       ps[j] = prior_conditioned_on_hyperprior(r, theta, mu_r, sigma_r, mu_theta, sigma_theta)*r;
     }
-    target += log(sum(logps)) - log(nsamp*pi()/4);
+    target += log(sum(ps)) - log(nsamp*pi()/4);
   }
 }
