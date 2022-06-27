@@ -62,4 +62,6 @@ if __name__ == '__main__':
 	print(fit.prior_settings)
 	fit.run(target_accept=0.95)
 
+	az.to_netcdf(fit.result, 'GW150914.nc')
+
 

@@ -7,5 +7,4 @@ do
 	echo ${file}
 	python -Wignore analysis.py -c ${file} --diagnosticsonly
 	python -Wignore analysis.py -c ${file} --charged --exactcharge
-	python -Wignore analysis.py -c ${file} 
 done

@@ -363,7 +363,7 @@ dg_coeffs = None
 #================================================================
 
 import multiprocessing
-multiprocessing.set_start_method("fork")
+#multiprocessing.set_start_method("fork")
 
 if charged:
 	shift_coeffs_df = pd.read_csv(params["charge_coeff_path"])
@@ -401,7 +401,7 @@ fit.update_prior(A_scale=5e-21, M_min=peak_sample['final_mass']*0.5, M_max=1.5*p
 print(fit.prior_settings)
 
 if __name__ == '__main__':
-	fit.run(iter=4000, target_accept=0.95)
+	fit.run(draws=1000, target_accept=0.95)
 	fit.result.to_netcdf(result_file)
 
 
