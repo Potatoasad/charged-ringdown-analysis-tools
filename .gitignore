@@ -1,3 +1,4 @@
+/charged_analysis/SettingConfigs/latest_ringdown/*
 *.nc
 *.hdf5
 *.h5
