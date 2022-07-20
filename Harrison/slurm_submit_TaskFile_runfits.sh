@@ -1,0 +1,1 @@
+sbatch -p cca -t 7-00 -n 150 -c 4 disBatch ./TaskFile_runfits
